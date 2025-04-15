@@ -1,0 +1,14 @@
+:root {
+  --main-color: #fc0;
+  --secundary-color: #0075be;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--main-color);
+}
