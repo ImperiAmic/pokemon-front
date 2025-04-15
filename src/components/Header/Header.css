@@ -1,0 +1,41 @@
+.main-header {
+  background-color: var(--secundary-color);
+}
+
+.main-header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+
+  @media (width > 500px) {
+    min-height: 140px;
+    font-size: 1.5rem;
+    padding: 20px 10px;
+  }
+}
+
+.main-header__title {
+  font-family: "Permanent Marker";
+}
+
+.main-header__text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.main-header__pokemon {
+  align-self: center;
+  width: 75px;
+  height: 69px;
+
+  @media (width > 500px) {
+    width: 100px;
+    height: 92px;
+  }
+}
