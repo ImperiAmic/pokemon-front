@@ -6,7 +6,7 @@ const Header: React.FC = () => {
       <div className="main-header__container">
         <div className="main-header__text-container">
           <h1 className="main-header__title">Pokédex</h1>
-          <span className="main-header__text">Gotta manage 'em all!</span>
+          <span>Gotta manage 'em all!</span>
         </div>
         <img
           className="main-header__pokemon"

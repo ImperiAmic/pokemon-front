@@ -17,16 +17,19 @@
   }
 }
 
-.main-header__title {
-  font-family: "Permanent Marker";
-}
-
 .main-header__text-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 10px;
+  color: #fff;
+}
+
+.main-header__title {
+  font-family:
+    "Permanent Marker", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .main-header__pokemon {
