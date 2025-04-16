@@ -1,44 +1,60 @@
 .main-header {
   background-color: var(--secundary-color);
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  @media (width > 500px) {
+    padding: 20px;
+    gap: 24px;
+  }
 }
 
 .main-header__container {
   max-width: 1200px;
-  margin: 0 auto;
-  min-height: 100px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
-
-  @media (width > 500px) {
-    min-height: 140px;
-    font-size: 1.5rem;
-    padding: 20px 10px;
-  }
 }
 
 .main-header__text-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 10px;
-  color: #fff;
+
+  @media (width > 500px) {
+    gap: 12px;
+  }
 }
 
 .main-header__title {
   font-family:
     "Permanent Marker", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  font-size: 2.5rem;
+
+  @media (width > 500px) {
+    font-size: 3.5rem;
+  }
 }
 
-.main-header__pokemon {
+.main-header__claim {
+  font-size: 1.2rem;
+
+  @media (width > 500px) {
+    font-size: 1.5rem;
+  }
+}
+
+.main-header__image {
   align-self: center;
   width: 75px;
   height: 69px;
 
   @media (width > 500px) {
-    width: 100px;
-    height: 92px;
+    width: 150px;
+    height: 138px;
   }
 }
