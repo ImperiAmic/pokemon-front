@@ -1,3 +1,7 @@
+.navigator {
+  align-self: flex-start;
+}
+
 .navigator__link {
   font-size: 1rem;
 

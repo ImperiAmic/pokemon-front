@@ -3,7 +3,7 @@ import "./Navigator.css";
 
 const Navigator: React.FC = () => {
   return (
-    <nav>
+    <nav className="navigator">
       <ul>
         <li>
           <NavLink className="navigator__link" to="/pokedex">
