@@ -1,3 +1,4 @@
+import Navigator from "../Navigator/Navigator";
 import "./Header.css";
 
 const Header: React.FC = () => {
@@ -6,16 +7,17 @@ const Header: React.FC = () => {
       <div className="main-header__container">
         <div className="main-header__text-container">
           <h1 className="main-header__title">Pokédex</h1>
-          <span>Gotta manage 'em all!</span>
+          <span className="main-header__claim">Gotta manage 'em all!</span>
         </div>
         <img
-          className="main-header__pokemon"
+          className="main-header__image"
           src="/mew.svg"
           alt="Pokémon Mew joyfuly floating"
           height={100}
           width={92}
         />
       </div>
+      <Navigator />
     </header>
   );
 };
