@@ -1,0 +1,22 @@
+.main-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 10px 20px;
+  display: flex;
+
+  @media (width > 500px) {
+    padding: 20px;
+  }
+}
+
+.counter {
+  background-color: var(--terciary-color);
+  border: 2px solid var(--black-color);
+  color: var(--white-color);
+  padding: 6px;
+  border-radius: 6px;
+
+  @media (width > 500px) {
+    padding: 12px;
+  }
+}

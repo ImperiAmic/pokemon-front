@@ -1,5 +1,11 @@
+import "./PokedexPage.css";
+
 const PokedexPage: React.FC = () => {
-  return <span>Current Pokémon count: 0</span>;
+  return (
+    <main className="main-container">
+      <span className="counter">Current Pokémon count: 0</span>
+    </main>
+  );
 };
 
 export default PokedexPage;
