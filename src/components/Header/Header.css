@@ -1,6 +1,6 @@
 .main-header {
   background-color: var(--secundary-color);
-  color: #fff;
+  color: var(--main-white);
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
@@ -16,6 +16,12 @@
 .main-header__container {
   max-width: 1200px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.main-header__brand-container {
   display: flex;
   justify-content: space-between;
 }
