@@ -14,7 +14,8 @@ const PokedexPage: React.FC = () => {
       <div className="pokedex-container">
         <h2 className="pokedex__title">Your Pokédex!</h2>
         <span className="pokedex__counter">
-          Current Pokémon count: {pokemons.length}
+          <span>Current Pokémon count:</span>
+          <span>{pokemons.length}</span>
         </span>
       </div>
     </main>
