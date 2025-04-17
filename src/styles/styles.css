@@ -1,6 +1,9 @@
 :root {
   --main-color: #fc0;
   --secundary-color: #0075be;
+  --terciary-color: #90f;
+  --main-black: #000;
+  --main-white: #fff;
 }
 
 *,
@@ -17,7 +20,8 @@ body {
     "Lucida Sans", Arial, sans-serif;
 }
 
-h1 {
+h1,
+h2 {
   margin: 0;
 }
 

@@ -1,0 +1,18 @@
+.main-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+  display: flex;
+}
+
+.counter {
+  background-color: var(--terciary-color);
+  border: 2px solid var(--main-black);
+  color: var(--main-white);
+  padding: 6px;
+  border-radius: 6px;
+
+  @media (width > 500px) {
+    padding: 12px;
+  }
+}
