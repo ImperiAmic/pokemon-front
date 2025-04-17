@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 
 // https://vite.dev/config/
 export default defineConfig({
+  build: { target: "esnext" },
   plugins: [react()],
   test: {
     root: "src",
@@ -13,7 +14,7 @@ export default defineConfig({
     coverage: {
       provider: "v8",
       include: ["**/*.tsx", "**/*.ts"],
-      exclude: ["main.tsx", "**/*.d.ts", "**/types.ts", "**/MonumentsPage.tsx"],
+      exclude: ["main.tsx", "**/*.d.ts", "**/types.ts", "**/PokedexPage.tsx"],
       reportsDirectory: "../coverage",
     },
   },
