@@ -6,6 +6,7 @@ const mapPokemonsDtoToPokemons = (pokemonsDto: PokemonDto[]): Pokemon[] => {
     ...pokemonsDto,
     name,
     imageDescription: `Pokémon ${name} in a defiant pose`,
+    isCaptured: false,
     types: [],
   }));
 };
