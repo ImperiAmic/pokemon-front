@@ -1,6 +1,4 @@
 .main-container {
-  margin: 0 auto;
-  max-width: 1200px;
   padding: 10px 20px;
 
   @media (width > 500px) {
@@ -9,6 +7,8 @@
 }
 
 .pokedex-container {
+  margin: 0 auto;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   gap: 10px;
