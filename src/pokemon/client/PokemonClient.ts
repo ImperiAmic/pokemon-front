@@ -1,6 +1,6 @@
 import mapPokemonsDtoToPokemons from "../dto/mapper";
 import PokemonDto from "../dto/types";
-import Pokemon from "../types";
+import { Pokemon } from "../types";
 import PokemonClientStructure from "./types";
 
 class PokemonClient implements PokemonClientStructure {
