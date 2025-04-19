@@ -5,8 +5,8 @@ import AddPokemonPage from "./AddPokemonPage";
 
 describe("Given the AddPokemonPage component", () => {
   describe("When it renders", () => {
-    test("Then it should show 'Add a Pókemon!' as a heading", () => {
-      const expectedPageTitle = "Add a Pókemon!";
+    test("Then it should show 'Add a Pokémon!' as a heading", () => {
+      const expectedPageTitle = "Add a Pokémon!";
 
       render(
         <PokemonContextProvider>
