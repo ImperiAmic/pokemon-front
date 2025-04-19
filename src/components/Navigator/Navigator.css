@@ -7,7 +7,7 @@
   flex-direction: column;
   gap: 12px;
 
-  @media (width > 500px) {
+  @media (width > 600px) {
     flex-direction: row;
     gap: 36px;
   }
@@ -21,7 +21,7 @@
     border-bottom: 3px solid var(--main-white);
   }
 
-  @media (width > 500px) {
+  @media (width > 600px) {
     font-size: 1.25rem;
   }
 }

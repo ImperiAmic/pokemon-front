@@ -7,7 +7,7 @@
   align-items: center;
   gap: 12px;
 
-  @media (width > 500px) {
+  @media (width > 600px) {
     padding: 20px;
     gap: 24px;
   }
@@ -24,24 +24,29 @@
 .main-header__brand-container {
   display: flex;
   justify-content: space-between;
+  gap: 6px;
 }
 
 .main-header__text-container {
   display: flex;
   flex-direction: column;
 
-  @media (width > 500px) {
+  @media (width > 600px) {
     gap: 12px;
   }
 }
 
-.main-header__title {
+.main-header__title,
+.main-header__claim {
   font-family:
     "Permanent Marker", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+}
+
+.main-header__title {
   font-size: 2.5rem;
 
-  @media (width > 500px) {
+  @media (width > 600px) {
     font-size: 3.5rem;
   }
 }
@@ -49,7 +54,7 @@
 .main-header__claim {
   font-size: 1.2rem;
 
-  @media (width > 500px) {
+  @media (width > 600px) {
     font-size: 1.5rem;
   }
 }
@@ -59,7 +64,7 @@
   width: 75px;
   height: 69px;
 
-  @media (width > 500px) {
+  @media (width > 600px) {
     width: 150px;
     height: 138px;
   }
