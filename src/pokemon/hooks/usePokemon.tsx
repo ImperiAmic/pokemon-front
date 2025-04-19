@@ -6,7 +6,7 @@ const usePokemon = (): PokemonContextStructure => {
   const context = useContext(PokemonContext);
 
   if (!context) {
-    throw new Error("Missing provider for Monuments content");
+    throw new Error("Missing provider for Pokemon content");
   }
 
   return context;
