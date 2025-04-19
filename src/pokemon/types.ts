@@ -6,6 +6,10 @@ export interface Pokemon {
   isCaptured: boolean;
   imageDescription: string;
   types: string[];
+  abilities: string[];
 }
 
-export default Pokemon;
+export type PokemonFormData = Omit<
+  Pokemon,
+  "id" | "isCaptured" | "imageDescription"
+>;
