@@ -1,5 +1,5 @@
 import { PropsWithChildren, useCallback, useMemo, useState } from "react";
-import { Pokemon } from "../types";
+import { Pokemon, PokemonFormData } from "../types";
 import PokemonClient from "../client/PokemonClient";
 import PokemonContextStructure from "./types";
 import PokemonContext from "./PokemonContext";
@@ -15,9 +15,18 @@ const PokemonContextProvider: React.FC<PropsWithChildren> = ({ children }) => {
     setPokemons(apiPokemons);
   }, [pokemonClient]);
 
+  const createPokemon = async (
+    pokemonFormData: PokemonFormData,
+  ): Promise<void> => {
+    const addedPokemon = await pokemonClient.addPokemon(pokemonFormData);
+
+    setPokemons((pokemons) => [...pokemons, addedPokemon]);
+  };
+
   const pokemonContextValue: PokemonContextStructure = {
     pokemons,
     loadPokemons,
+    createPokemon,
   };
 
   return (
