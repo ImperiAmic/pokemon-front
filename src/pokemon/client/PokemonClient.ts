@@ -1,6 +1,9 @@
-import mapPokemonsDtoToPokemons from "../dto/mapper";
+import {
+  mapPokemonDtoToPokemon,
+  mapPokemonsDtoToPokemons,
+} from "../dto/mapper";
 import PokemonDto from "../dto/types";
-import { Pokemon } from "../types";
+import { Pokemon, PokemonFormData } from "../types";
 import PokemonClientStructure from "./types";
 
 class PokemonClient implements PokemonClientStructure {
@@ -16,10 +19,18 @@ class PokemonClient implements PokemonClientStructure {
     const litePokemons = mapPokemonsDtoToPokemons(PokemonDto);
 
     const pokemons = Promise.all(
-      litePokemons.map(async (typlessPokemon) => {
+      litePokemons.map(async (litePokemon) => {
         const pokeApiResponse = await fetch(
-          `https://pokeapi.co/api/v2/pokemon/${typlessPokemon.name}`,
+          `https://pokeapi.co/api/v2/pokemon/${litePokemon.name}`,
         );
+
+        if (pokeApiResponse.status === 404) {
+          return {
+            ...litePokemon,
+            types: litePokemon.types,
+            abilities: litePokemon.abilities,
+          };
+        }
 
         const pokeApiTypesAndAbilities = (await pokeApiResponse.json()) as {
           types: { type: { name: string } }[];
@@ -35,7 +46,7 @@ class PokemonClient implements PokemonClientStructure {
         );
 
         return {
-          ...typlessPokemon,
+          ...litePokemon,
           types: pokemonTypes,
           abilities: pokemonAbilities,
         };
@@ -43,6 +54,20 @@ class PokemonClient implements PokemonClientStructure {
     );
 
     return pokemons;
+  };
+
+  public addPokemon = async (
+    pokemonFormData: PokemonFormData,
+  ): Promise<Pokemon> => {
+    const response = await fetch(`${this.apiUrl}/pokemon`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(pokemonFormData),
+    });
+
+    const addedPokemon = (await response.json()) as PokemonDto;
+
+    return mapPokemonDtoToPokemon(addedPokemon);
   };
 }
 
