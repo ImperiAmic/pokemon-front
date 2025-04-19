@@ -15,7 +15,7 @@ describe("Given the PokemonForm component", () => {
     test("Then it should show a 'Write the new Pokémon name' text box", () => {
       render(
         <MemoryRouter>
-          <PokemonForm />
+          <PokemonForm action={fakeAction} />
         </MemoryRouter>,
       );
 
@@ -29,7 +29,7 @@ describe("Given the PokemonForm component", () => {
     test("Then it should show a 'Add an image of your Pokémon' text box", () => {
       render(
         <MemoryRouter>
-          <PokemonForm />
+          <PokemonForm action={fakeAction} />
         </MemoryRouter>,
       );
       const PokemonNameTextBox = screen.getByLabelText(
@@ -42,7 +42,7 @@ describe("Given the PokemonForm component", () => {
     test("Then it should show a 'Which is its Pokédex position?' text box", () => {
       render(
         <MemoryRouter>
-          <PokemonForm />
+          <PokemonForm action={fakeAction} />
         </MemoryRouter>,
       );
       const PokemonNameTextBox = screen.getByLabelText(
@@ -55,7 +55,7 @@ describe("Given the PokemonForm component", () => {
     test("Then it should show a 'Write down its type' text box", () => {
       render(
         <MemoryRouter>
-          <PokemonForm />
+          <PokemonForm action={fakeAction} />
         </MemoryRouter>,
       );
       const PokemonNameTextBox = screen.getByLabelText(/write down its type/i);
@@ -66,7 +66,7 @@ describe("Given the PokemonForm component", () => {
     test("Then it should show a 'Any special ability?' text box", () => {
       render(
         <MemoryRouter>
-          <PokemonForm />
+          <PokemonForm action={fakeAction} />
         </MemoryRouter>,
       );
       const PokemonNameTextBox = screen.getByLabelText(/any special ability/i);
@@ -77,7 +77,7 @@ describe("Given the PokemonForm component", () => {
     test("Then it should show a 'Submit' button", () => {
       render(
         <MemoryRouter>
-          <PokemonForm />
+          <PokemonForm action={fakeAction} />
         </MemoryRouter>,
       );
       const PokemonNameTextBox = screen.getByRole("button", {
@@ -94,7 +94,7 @@ describe("Given the PokemonForm component", () => {
 
       render(
         <MemoryRouter>
-          <PokemonForm />
+          <PokemonForm action={fakeAction} />
         </MemoryRouter>,
       );
       const PokemonNameTextBox = screen.getByLabelText(

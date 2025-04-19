@@ -6,6 +6,12 @@
   gap: 36px;
 }
 
+.form-set {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -51,6 +57,7 @@
   border-radius: 12px;
   align-self: center;
   font-size: 1.2rem;
+  height: 66px;
 
   @media (width > 600px) {
     width: 300px;
@@ -60,4 +67,8 @@
 .form__button:disabled {
   cursor: not-allowed;
   background-color: #808080;
+}
+
+.form__aclaration {
+  font-size: 1.5rem;
 }
