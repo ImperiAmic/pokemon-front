@@ -1,4 +1,4 @@
-import Pokemon from "../../types";
+import { Pokemon } from "../../types";
 import PokemonCard from "../PokemonCard/PokemonCard";
 import "./PokemonsList.css";
 

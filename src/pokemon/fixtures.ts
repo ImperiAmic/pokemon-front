@@ -1,4 +1,4 @@
-import Pokemon from "./types";
+import { Pokemon } from "./types";
 
 export const negri: Pokemon = {
   id: "a1",
@@ -8,6 +8,7 @@ export const negri: Pokemon = {
   isCaptured: true,
   imageDescription: "Pokémon Negri posing defiantly",
   types: ["cat", "lazy"],
+  abilities: ["open doors", "loud meow"],
 };
 
 export const pikachu: Pokemon = {
@@ -18,6 +19,7 @@ export const pikachu: Pokemon = {
   isCaptured: false,
   imageDescription: "Pokémon Pikachu posing defiantly",
   types: ["electric", "famous"],
+  abilities: ["smoke", "drink"],
 };
 
 export const fixturePokemons = [negri, pikachu];
