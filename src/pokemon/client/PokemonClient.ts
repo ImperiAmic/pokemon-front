@@ -13,23 +13,32 @@ class PokemonClient implements PokemonClientStructure {
       pokemons: PokemonDto[];
     };
 
-    const typelessPokemons = mapPokemonsDtoToPokemons(PokemonDto);
+    const litePokemons = mapPokemonsDtoToPokemons(PokemonDto);
 
     const pokemons = Promise.all(
-      typelessPokemons.map(async (typlessPokemon) => {
+      litePokemons.map(async (typlessPokemon) => {
         const pokeApiResponse = await fetch(
           `https://pokeapi.co/api/v2/pokemon/${typlessPokemon.name}`,
         );
 
-        const pokeApiTypes = (await pokeApiResponse.json()) as {
+        const pokeApiTypesAndAbilities = (await pokeApiResponse.json()) as {
           types: { type: { name: string } }[];
+          abilities: { ability: { name: string } }[];
         };
 
-        const pokemonTypes = pokeApiTypes.types.map(
+        const pokemonTypes = pokeApiTypesAndAbilities.types.map(
           (pokemonType) => pokemonType.type.name,
         );
 
-        return { ...typlessPokemon, types: pokemonTypes };
+        const pokemonAbilities = pokeApiTypesAndAbilities.abilities.map(
+          (pokemonAbility) => pokemonAbility.ability.name,
+        );
+
+        return {
+          ...typlessPokemon,
+          types: pokemonTypes,
+          abilities: pokemonAbilities,
+        };
       }),
     );
 
