@@ -11,15 +11,17 @@ const PokedexPage: React.FC = () => {
   }, [loadPokemons]);
 
   return (
-    <main className="main-content">
+    <main className="main-container">
       <div className="pokedex-container">
-        <h2 className="pokedex__title">Your Pokédex!</h2>
-        <span className="pokedex__counter">
-          <span>Current Pokémon count:</span>
-          <span>{pokemons.length}</span>
-        </span>
+        <header className="pokedex-header">
+          <h2 className="pokedex-header__title">Your Pokédex!</h2>
+          <span className="pokedex-header__counter">
+            <span>Current Pokémon count:</span>
+            <span>{pokemons.length}</span>
+          </span>
+        </header>
+        <PokemonsList pokemons={pokemons} />
       </div>
-      <PokemonsList pokemons={pokemons} />
     </main>
   );
 };
