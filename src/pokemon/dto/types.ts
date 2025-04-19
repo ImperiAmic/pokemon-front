@@ -1,5 +1,5 @@
 import { Pokemon } from "../types";
 
-export type PokemonDto = Omit<Pokemon, "imageDescription" | "types">;
+export type PokemonDto = Omit<Pokemon, "imageDescription">;
 
 export default PokemonDto;
