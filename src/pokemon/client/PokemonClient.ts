@@ -20,8 +20,10 @@ class PokemonClient implements PokemonClientStructure {
 
     const pokemons = Promise.all(
       litePokemons.map(async (litePokemon) => {
+        const lowercaseLitePokemonName = litePokemon.name.toLocaleLowerCase();
+
         const pokeApiResponse = await fetch(
-          `https://pokeapi.co/api/v2/pokemon/${litePokemon.name}`,
+          `https://pokeapi.co/api/v2/pokemon/${lowercaseLitePokemonName}`,
         );
 
         if (pokeApiResponse.status === 404) {
@@ -68,6 +70,17 @@ class PokemonClient implements PokemonClientStructure {
     const addedPokemon = (await response.json()) as PokemonDto;
 
     return mapPokemonDtoToPokemon(addedPokemon);
+  };
+
+  public deletePokemon = async (pokemonId: string): Promise<Pokemon> => {
+    const response = await fetch(`${this.apiUrl}/pokemon/${pokemonId}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const deletedPokemon = (await response.json()) as PokemonDto;
+
+    return mapPokemonDtoToPokemon(deletedPokemon);
   };
 }
 
