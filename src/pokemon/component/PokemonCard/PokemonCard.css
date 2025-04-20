@@ -24,6 +24,8 @@
 
 .pokemon__image {
   align-self: center;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 .pokemon__footer {
@@ -38,14 +40,22 @@
   padding-top: 6px;
 }
 
-.pokemon__type {
+.pokemon__type,
+.pokemon__catch-button {
   height: 30px;
   padding: 6px;
   border: 1px solid var(--main-black);
   border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.pokemon__type {
   display: flex;
   align-items: center;
   background-color: var(--terciary-color);
   color: var(--main-white);
-  font-size: 0.8rem;
+}
+
+.pokemon__catch-button {
+  background-color: var(--main-color);
 }

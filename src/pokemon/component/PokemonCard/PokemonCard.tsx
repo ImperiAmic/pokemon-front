@@ -1,3 +1,4 @@
+import usePokemon from "../../hooks/usePokemon";
 import { Pokemon } from "../../types";
 import "./PokemonCard.css";
 
@@ -6,6 +7,8 @@ interface PokemonCardProps {
 }
 
 const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
+  const { removePokemon } = usePokemon();
+
   const isPokemonInPokeball = pokemon.isCaptured ? (
     <img
       src="/favicon.svg"
@@ -15,7 +18,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
       height={24}
     />
   ) : (
-    <span>{"Catch!"}</span>
+    <button className="pokemon__catch-button">{"Catch!"}</button>
   );
 
   return (
@@ -41,6 +44,9 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
           ))}
         </div>
         {isPokemonInPokeball}
+        <button type="button" onClick={() => removePokemon(pokemon.id)}>
+          <img src="/cross.svg" alt="Cross icon" height={24} width={24} />
+        </button>
       </footer>
     </article>
   );
