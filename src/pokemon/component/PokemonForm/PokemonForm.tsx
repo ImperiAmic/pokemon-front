@@ -19,11 +19,7 @@ const PokemonForm: React.FC<PokemonFormProps> = ({ action }) => {
   const [pokemonData, setPokemonData] =
     useState<PokemonFormData>(emptyPokemonData);
 
-  const editPokemonData = (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>,
-  ) => {
+  const editPokemonData = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value;
     const propertyName = event.target.id;
 
